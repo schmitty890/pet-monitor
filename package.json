@@ -1,0 +1,55 @@
+{
+  "name": "pet-monitor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "gulp",
+    "eslint": "eslint",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schmitty890/pet-monitor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/schmitty890/pet-monitor/issues"
+  },
+  "homepage": "https://github.com/schmitty890/pet-monitor#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "moment": "^2.22.2",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.37.10"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-css": "^0.1.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-rename": "^1.2.3",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch-sass": "^1.4.1",
+    "mocha": "^5.2.0",
+    "run-sequence": "^2.2.1",
+    "wrench": "^1.5.9"
+  }
+}

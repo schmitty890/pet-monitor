@@ -1,0 +1,205 @@
+[{
+  "title": "Autos",
+  "url": "classifieds/autos",
+  "icon": "fa-car",
+  "subcats": [
+  {
+    "title": "Cars",
+    "url": "classifieds/autos?type=cars"
+  },
+  {
+    "title": "Trucks",
+    "url": "classifieds/autos?type=trucks"
+  },
+  {
+    "title": "Rvs",
+    "url": "classifieds/autos?type=rvs"
+  }]
+},{
+  "title": "Bikes",
+  "url": "classifieds/bikes",
+  "icon": "fa-bicycle",
+  "subcats": [
+  {
+    "title": "Kids & Youth",
+    "url": "classifieds/bikes?type=kidsYouthBike"
+  },
+  {
+    "title": "Adult",
+    "url": "classifieds/bikes?type=adultBike"
+  },
+  {
+    "title": "Perf",
+    "url": "classifieds/bikes?type=performanceBike"
+  }]
+},{
+  "title": "Electronics",
+  "url": "classifieds/electronics",
+  "icon": "fa-gamepad",
+  "subcats": [
+  {
+    "title": "Computers",
+    "url": "classifieds/electronics?type=computers"
+  },
+  {
+    "title": "Tvs",
+    "url": "classifieds/electronics?type=tvs"
+  },
+  {
+    "title": "Camera",
+    "url": "classifieds/electronics?type=camera"
+  }]
+},{
+  "title": "Appliances",
+  "url": "classifieds/appliances",
+  "icon": "fa-gears",
+  "subcats": [
+  {
+    "title": "Kitchen",
+    "url": "classifieds/appliances?type=kitchen"
+  },
+  {
+    "title": "Household",
+    "url": "classifieds/appliances?type=household"
+  },
+  {
+    "title": "Other",
+    "url": "classifieds/appliances?type=other"
+  }]
+},{
+  "title": "BabyKid",
+  "url": "classifieds/babyKid",
+  "icon": "fa-child",
+  "subcats": [
+  {
+    "title": "Toys",
+    "url": "classifieds/babyKid?toys"
+  },
+  {
+    "title": "Strollers",
+    "url": "classifieds/babyKid?type=strollers"
+  },
+  {
+    "title": "Bedroom",
+    "url": "classifieds/babyKid?type=kidsBedroom"
+  }]
+},{
+  "title": "Clothes",
+  "url": "classifieds/clothes",
+  "icon": "fa-get-pocket",
+  "subcats": [
+  {
+    "title": "Mens",
+    "url": "classifieds/clothes?type=mensClothes"
+  },
+  {
+    "title": "Womens",
+    "url": "classifieds/clothes?type=womensClothes"
+  },
+  {
+    "title": "Baby",
+    "url": "classifieds/clothes?type=babyClothes"
+  }]
+},{
+  "title": "Furniture",
+  "url": "classifieds/furniture",
+  "icon": "fa-bed",
+  "subcats": [
+  {
+    "title": "first",
+    "url": "classifieds/furniture?"
+  },
+  {
+    "title": "second",
+    "url": "classifieds/furniture?"
+  },
+  {
+    "title": "third",
+    "url": "classifieds/furniture?"
+  }]
+},{
+  "title": "Lawn",
+  "url": "classifieds/lawn",
+  "icon": "fa-tree",
+  "subcats": [
+  {
+    "title": "Equipment",
+    "url": "classifieds/lawn?type=lawnEq"
+  },
+  {
+    "title": "Decorative",
+    "url": "classifieds/lawn?type=decorativeLawn"
+  },
+  {
+    "title": "Plants",
+    "url": "classifieds/lawn?type=plants"
+  }]
+},{
+  "title": "Music",
+  "url": "classifieds/music",
+  "icon": "fa-music",
+  "subcats": [
+  {
+    "title": "Guitars",
+    "url": "classifieds/music?type=guitars"
+  },
+  {
+    "title": "Amps",
+    "url": "classifieds/music?type=amps"
+  },
+  {
+    "title": "Drums",
+    "url": "classifieds/music?type=drums"
+  }]
+},{
+  "title": "Sports",
+  "url": "classifieds/sports",
+  "icon": "fa-soccer-ball-o",
+  "subcats": [
+  {
+    "title": "Fitness",
+    "url": "classifieds/sports?type=fitness"
+  },
+  {
+    "title": "YardGames",
+    "url": "classifieds/sports?type=yardGames"
+  },
+  {
+    "title": "Hiking",
+    "url": "classifieds/sports?type=hiking"
+  }]
+},{
+  "title": "Phones",
+  "url": "classifieds/phones",
+  "icon": "fa-phone",
+  "subcats": [
+  {
+    "title": "Apple",
+    "url": "classifieds/phones?type=applePhone"
+  },
+  {
+    "title": "Android",
+    "url": "classifieds/phones?type=androidPhone"
+  },
+  {
+    "title": "Other",
+    "url": "classifieds/phones?type=phonesOther"
+  }]
+},{
+  "title": "Tickets",
+  "url": "classifieds/tickets",
+  "icon": "fa-ticket",
+  "subcats": [
+  {
+    "title": "Sports",
+    "url": "classifieds/tickets?type=sportsTickets"
+  },
+  {
+    "title": "Concerts",
+    "url": "classifieds/tickets?type=concertTickets"
+  },
+  {
+    "title": "Other",
+    "url": "classifieds/tickets?type=otherTickets"
+  }]
+}]

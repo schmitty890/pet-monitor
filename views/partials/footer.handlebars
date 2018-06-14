@@ -1,0 +1,93 @@
+<footer class="footer">
+  <div class="wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <a href="#" class="brand">
+            <img src="assets/img/logo.png" alt="">
+          </a>
+          <p>
+            To learn more about the tech that drives this page, visit <a href="https://github.com/schmitty890/homestead">here.</a>
+          </p>
+        </div>
+        <!--end col-md-5-->
+        <div class="col-md-3">
+          <h2>Navigation</h2>
+          <div class="row">
+            <div class="col-md-6 col-sm-6">
+              <nav>
+                <ul class="list-unstyled">
+                  <li>
+                    <a href="/">Home</a>
+                  </li>
+                  <li>
+                    <a href="/account">Account</a>
+                  </li>
+                  <li>
+                    <a href="/events">Events</a>
+                  </li>
+                  <li>
+                    <a href="classifieds">Classifieds</a>
+                  </li>
+                  <li>
+                    <a href="/resources">Resource Share</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <nav>
+                <ul class="list-unstyled">
+                  <!--commenting out until we have this functional
+                   <li>
+                    <a href="#">My Ads</a>
+                  </li> -->
+                  {{#if hbsObject.user}}
+                    <li>
+                      <a href="/signout">Logout</a>
+                    </li>
+                  {{else}}
+                    <li>
+                      <a href="/signin">Sign In</a>
+                    </li>
+                    <li>
+                      <a href="/signup">Register</a>
+                    </li>                  
+                  {{/if}}
+
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!--end col-md-3-->
+        <div class="col-md-4">
+          <h2>Contact</h2>
+          <address>
+            <figure>
+              HOA Main Office<br>
+              109 Fidelity Court Rd.<br>
+              Carrboro, NC 27510
+            </figure>
+            <strong>Phone: </strong> (919) 555-5555
+            <br>
+            <br>
+            <a href="/contact" class="btn btn-primary text-caps btn-framed">Contact Us</a>
+          </address>
+        </div>
+        <!--end col-md-4-->
+      </div>
+      <!--end row-->
+    </div>
+    <div class="background">
+      <div class="background-image original-size">
+        <img src="assets/img/footer-background-icons.jpg" alt="">
+      </div>
+      <!--end background-image-->
+    </div>
+    <!--end background-->
+  </div>
+</footer>
+<!--end footer-->
+</div>
+<!--end page-->
