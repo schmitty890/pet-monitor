@@ -1,0 +1,82 @@
+<div class="page sub-page">
+  <section class="hero">
+    <div class="hero-wrapper">
+      <div class="page-title">
+        <div class="container">
+          <h1>Add a pet</h1>
+        </div>
+      </div>
+    </div>
+    <div class="background"></div>
+  </section>
+  <section class="content">
+    <section class="block">
+      <div class="container">
+        <form class="form form-submit" id="post-pet-form">
+          <section>
+            <h2>Basic Information</h2>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-form-label required">Pet Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Penny" required>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="searchable-select" class="col-form-label">Pet Type</label>
+                  <select name="submit_category" id="petType" data-placeholder="Select" data-enable-search="true">
+                      <option value="">Select</option>
+                      <option value="dog">Dog</option>
+                      <option value="cat">Cat</option>
+                  </select>
+                </div>
+                  <!--end form-group-->
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="date" class="col-form-label">D.O.B</label>
+                  <input name="date" type="text" class="form-control date" placeholder="01/01/2009" id="dob">
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-form-label">Image</label>
+                  <input type="text" class="form-control" id="image" placeholder="yourpetsimage.jpg">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-form-label">Favorite Food</label>
+                  <input type="text" class="form-control" id="favFood" placeholder="Iams">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-form-label">Favorite Treat</label>
+                  <input type="text" class="form-control" id="favTreat" placeholder="CatNip">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>Details</h2>
+            <div class="form-group">
+              <label for="details" class="col-form-label">Additional Details</label>
+              <textarea name="details" id="details" class="form-control" rows="4"></textarea>
+            </div>
+          </section>
+          <section class="clearfix">
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary medium icon float-right" id="post-pet-btn" data-id={{userId}} data-userName={{userName}}>Post<i class="fa fa-chevron-right"></i></button>
+            </div>
+          </section>
+        </form>
+      </div>
+    </section>
+  </section>
+</div>

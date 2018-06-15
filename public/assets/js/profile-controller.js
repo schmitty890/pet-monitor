@@ -1,40 +1,31 @@
+
+// var ProfileViewController = function(){
+
+//   function privateFunction(){
+//     $(document).on('click', '.profileForm', function() {
+//       $('.profileForm').addClass('hide');
+//       $(this).removeClass('hide');
+//     });
+//   }
+
+//   function init() {
+//     privateFunction();
+//   }
+
+//   return {
+//     init: init
+//   }
+
+// }();
+
+// ProfileViewController.init();
+
+
 $("#profileUpdate").on("click", function() {
-  $("#profileEventForm").hide()
-  $("#profileClassForm").hide()
-  $("#profileResForm").hide()
-  $("#profileContactForm").hide()
-  $("#profileLander").hide()
+  $("#profilePetForm").hide()
   $("#profileUpdateForm").show()
 })
-$("#profilePostEvent").on("click", function() {
-  $("#profileClassForm").hide()
-  $("#profileResForm").hide()
-  $("#profileContactForm").hide()
+$("#profilePostPet").on("click", function() {
+  $("#profilePetForm").show()
   $("#profileUpdateForm").hide()
-  $("#profileLander").hide()
-  $("#profileEventForm").show()
-})
-$("#profilePostClass").on("click", function() {
-  $("#profileEventForm").hide()
-  $("#profileResForm").hide()
-  $("#profileContactForm").hide()
-  $("#profileUpdateForm").hide()
-  $("#profileLander").hide()
-  $("#profileClassForm").show()
-})
-$("#profilePostRes").on("click", function() {
-  $("#profileEventForm").hide()
-  $("#profileClassForm").hide()
-  $("#profileContactForm").hide()
-  $("#profileUpdateForm").hide()
-  $("#profileLander").hide()
-  $("#profileResForm").show()
-})
-$("#profileContact").on("click", function() {
-  $("#profileEventForm").hide()
-  $("#profileClassForm").hide()
-  $("#profileResForm").hide()
-  $("#profileUpdateForm").hide()
-  $("#profileLander").hide()
-  $("#profileContactForm").show()
 })

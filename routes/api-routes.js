@@ -1,24 +1,98 @@
-// *********************************************************************************
-// api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
 
-// Dependencies
-// =============================================================
 var db = require("../models");
 var axios = require('axios');
-// Routes
-// =============================================================
+
 module.exports = function(app) {
-  app.post("/api/classifieds", function(req, res) {
+  app.post('/api/pets', function(req, res) {
     var userId = '';
-    db.classifieds.create(req.body)
-      .then(function(classified) {
-        // console.log(classified, "made it here")
-        res.json(classified);
+    db.pet.create(req.body)
+      .then(function(pet) {
+        // console.log(pet, 'made it here')
+        res.json(pet);
       })
       .catch(function(err) {
         res.json({ status: "ERROR", message: err })
       })
+  });
+
+  app.put('/api/pets/:id', function(req, res) {
+    console.log(req.body);
+    var updateAction = req.body.action;
+    var update = {};
+    // build where clause
+    switch(updateAction) {
+      case 'lastTreat':
+        update = {
+          lastTreat: req.body.time
+        }
+        break;
+      case 'lastFed':
+        update = {
+          lastFed: req.body.time
+        }
+        break;
+      case 'lastOutside':
+        update = {
+          lastOutside: req.body.time
+        }
+        break;
+      case 'lastBath':
+        update = {
+          lastBath: req.body.time
+        }
+        break;
+      case 'lastGrooming':
+        update = {
+          lastGrooming: req.body.time
+        }
+        break;
+      case 'lastLitterScoop':
+        update = {
+          lastLitterScoop: req.body.time
+        }
+        break;
+      case 'lastNailClip':
+        update = {
+          lastNailClip: req.body.time
+        }
+        break;
+      case 'lastBrushing':
+        update = {
+          lastBrushing: req.body.time
+        }
+        break;
+      case 'associateSelectOne':
+        update = {
+          associateSelectOne: req.body.granteeUserName
+        }
+        break;
+      case 'associateSelectTwo':
+        update = {
+          associateSelectTwo: req.body.granteeUserName
+        }
+        break;
+      case 'associateSelectThree':
+        update = {
+          associateSelectThree: req.body.granteeUserName
+        }
+        break;
+    }
+    update.lastInteractedWith = req.body.user;
+
+    db.pet.update(update, {
+      where: {
+        id: req.body.petID
+      }
+    }).then(function() {
+        if (result.changedRows == 0) {
+          return res.status(404).end();
+        } else {
+          res.status(200).end();
+        }
+      })
+      .catch(function(err) {
+        res.json({status: "ERROR", message: err})
+      });
   });
 
   app.post("/api/messages", function(req, res) {
@@ -35,16 +109,6 @@ module.exports = function(app) {
       })
   });
 
-  app.post("/api/events", function(req, res) {
-    var userId = '';
-    db.event.create(req.body)
-      .then(function(events) {
-        res.json(events);
-      })
-      .catch(function(err) {
-        res.json({ status: "ERROR", message: err })
-      })
-  });
 
   app.post("/api/resources", function(req, res) {
     var userId = '';
@@ -62,8 +126,8 @@ module.exports = function(app) {
   app.get('/api/weather', function(req, res) {
     var openWeatherCreds = {
       apiKey: process.env.openWeatherMap,
-      zipcode: 27510,
-      city: 'Carrboro'
+      zipcode: 27606,
+      city: 'Raleigh'
     }
     var queryURLweather = 'https://api.openweathermap.org/data/2.5/weather?zip=' + openWeatherCreds.zipcode + '&q=' + openWeatherCreds.city + '&units=imperial&appid=' + openWeatherCreds.apiKey;
 
