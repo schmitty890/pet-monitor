@@ -74,9 +74,9 @@ app.get('*', function(req, res) {
 // =============================================================
 
 // Always keep one of the "db.sequelize" lines commented out.
-db.sequelize.sync().then(function() {
+// db.sequelize.sync().then(function() {
 // reset your seeds
-// db.sequelize.sync({ force: true }).then(function () {
+db.sequelize.sync({ force: true }).then(function () {
   // seeds(); // populates with seed data
 
   app.listen(PORT, function () {
