@@ -1,0 +1,61 @@
+<div class="container">
+  <h1>Your pets</h1>
+  <h3>Here are your pets.</h3>
+  <div class="items list grid-xl-4-items grid-lg-3-items grid-md-2-items">
+    {{#each hbsObject.thePets}}
+    <div class="item" data-id={{this.id}}>
+      <div>ID#: {{this.id}} | {{this.name}} | {{this.type}}</div>
+    </div>
+    {{/each}}
+
+    <section class="content">
+      <section class="block">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h2>Add a user to interact with your pet</h2>
+              <p>
+                  Only add users that you know and can rely on to interact with your pet!
+              </p>
+              <br>
+
+            </div>
+            <!--end col-md-4-->
+            <div class="col-md-8">
+              <h2>Contact Form</h2>
+              <form class="form email" id="pet-permission-form">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name" class="col-form-label required">ID of your pet you wish to share permissions with</label>
+                      <input name="petID" type="text" class="form-control" id="petID" placeholder="Your Pet ID" required>
+                    </div>
+                    <!--end form-group-->
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email" class="col-form-label required">Username of the person you wish to share with</label>
+                      <input name="username" type="text" class="form-control" id="username" placeholder="Other persons username" required>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label for="searchable-select" class="col-form-label">Which slot to associate</label>
+                      <select name="submit_category" id="associate-select" data-placeholder="Select" data-enable-search="true">
+                        <option value="">Select</option>
+                        <option data-action="associateSelectOne" value="1">One</option>
+                        <option data-action="associateSelectTwo" value="2">Two</option>
+                        <option data-action="associateSelectThree" value="3">Three</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary float-right" id="pet-permission-btn" data-id={{hbsObject.userId}} data-userName={{hbsObject.userName}}>Send Message</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+</div>

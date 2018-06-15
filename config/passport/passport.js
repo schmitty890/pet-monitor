@@ -1,7 +1,7 @@
 //load bcrypt
 const bCrypt = require('bcrypt-nodejs');
 
-module.exports = function(passport,user){
+module.exports = function(passport,user) {
 
   const User = user;
   const LocalStrategy = require('passport-local').Strategy;
@@ -26,8 +26,7 @@ module.exports = function(passport,user){
   //this is the localstrategy that sets up how auth is carried locally to the session
   //in config because it configs how session auth works, this is standard location
   //this is the hard part, also encryption via hashing happens here
-  passport.use('local-signup', new LocalStrategy(
-    {           
+  passport.use('local-signup', new LocalStrategy( {
       usernameField : 'email', //overriding to login by email for now, more typical
       passwordField : 'password',
       passReqToCallback : true // allows us to pass back the entire request to the callback
@@ -40,36 +39,38 @@ module.exports = function(passport,user){
       //check to see if user already exists
       User.findOne({where: {email:email}}).then(function(user){
         if (user) {
+          console.log('That email is already taken!!!');
           return done(null, false, {message : 'That email is already taken'} );
-        } else
-        {
+        } else {
           const userPassword = generateHash(password);
-          console.log("this one")
-          console.log(req.body)
-          const data =
-          { email:email,
+          // console.log("this one")
+          // console.log(req.body)
+          const data = {
+            email:email,
             password:userPassword,
-            firstname: req.body.firstname,
-            lastname: req.body.lastname,
-            about: req.body.aboutSignup,
+            secret: req.body.secret,
             username: req.body.username
           };
+          // console.log(data);
+          if(data.secret !== '12345') {
+            console.log('secret was wrong');
+            return done(null, false);
+          }
           //if not already existing, create new user and return values to session
-          User.create(data).then(function(newUser,created){
+          User.create(data).then(function(newUser, created) {
             if (!newUser){
               return done(null,false);
             }
             if (newUser){
-              return done(null,newUser);  
+              return done(null,newUser);
             }
           });
         }
-      }); 
+      });
     }));
-    
+
   //LOCAL SIGNIN
-  passport.use('local-signin', new LocalStrategy( 
-    {
+  passport.use('local-signin', new LocalStrategy({
       // by default, local strategy uses username and password, we will override with email for now and change if we want to later see above comment
       usernameField : 'email',
       passwordField : 'password',

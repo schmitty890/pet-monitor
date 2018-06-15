@@ -25,6 +25,18 @@ app.use(express.static('public'));
 app.engine('handlebars', exphbs({
   defaultLayout: 'main',
   helpers: {
+    ifeq: function (a, b, options) {
+      if (a == b) { return options.fn(this); }
+    },
+    momentBirthday: function(time) {
+      var check = moment(time);
+      var month = check.format('M');
+      var day   = check.format('D');
+      var year  = check.format('YYYY');
+      var d = new Date();
+      var currentYear = d.getFullYear();
+      return moment([currentYear, month - 1, day]).fromNow();
+    },
     upperCase: function(str) {
       return str.charAt(0).toUpperCase() + str.slice(1);
     },
@@ -64,8 +76,8 @@ app.get('*', function(req, res) {
 // Always keep one of the "db.sequelize" lines commented out.
 db.sequelize.sync().then(function() {
 // reset your seeds
-//db.sequelize.sync({ force: true }).then(function () {
-  //seeds(); // populates with seed data
+// db.sequelize.sync({ force: true }).then(function () {
+  // seeds(); // populates with seed data
 
   app.listen(PORT, function () {
     // console.log("App listening on PORT " + PORT);

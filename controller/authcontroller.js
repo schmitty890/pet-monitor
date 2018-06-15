@@ -1,6 +1,6 @@
 var exports = module.exports = {}
 //not using this yet
-//const db = require("../models");
+var db = require("../models");
 
 exports.signup = function(req,res){
   res.render('signup');
@@ -24,14 +24,32 @@ exports.account = function(req, res) {
   });
 }
 
-exports.postcommunity = function(req, res) {
+exports.postapet = function(req, res) {
   let hbsObject = {
     user: req.user
   }
-  res.render('postcommunity', {
+  res.render('postapet', {
     userId: req.user.id,
     userName: req.user.username,
     hbsObject: hbsObject
+  });
+}
+
+exports.yourpetslanding = function(req, res) {
+  let hbsObject = {
+    user: req.user,
+    userId: req.user.id,
+    userName: req.user.username
+  };
+  db.pet.findAll({
+    where: {
+      username: hbsObject.user.username
+    }
+  }).then(function(thePets) {
+    // console.log(thePets);
+    hbsObject.thePets = thePets;
+    // console.log(hbsObject)
+    res.render('yourpetslanding', { hbsObject: hbsObject });
   });
 }
 
@@ -46,22 +64,11 @@ exports.postclassified = function(req, res) {
   });
 }
 
-exports.postevent = function(req, res) {
-  let hbsObject = {
-    user: req.user
-  }
-  res.render('postevent', {
-    userId: req.user.id,
-    userName: req.user.username,
-    hbsObject: hbsObject
-  });
-}
-
 exports.postresource = function(req, res) {
   let hbsObject = {
     user: req.user
   }
-  res.render('postresource', { 
+  res.render('postresource', {
     userId: req.user.id,
     userName: req.user.username,
     hbsObject: hbsObject

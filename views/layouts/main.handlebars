@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 {{> header}}
-<body>
+<body data-user={{hbsObject.user.username}} data-id={{hbsObject.user.id}}>
   {{> nav}}
 
   {{{body}}}
