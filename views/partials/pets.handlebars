@@ -1,0 +1,77 @@
+<div class="items list grid-xl-4-items grid-lg-3-items grid-md-2-items">
+  {{#each hbsObject.thePets}}
+  <div class="item" data-id={{this.id}}>
+    {{!-- <div class="ribbon-featured">Featured</div> --}}
+    <div class="wrapper">
+      <div class="image">
+        <h3>
+          <a class="title">{{this.name}}</a>
+        </h3>
+        <a class="image-wrapper background-image">
+          <img src="{{this.image}}" alt="{{this.name}}">
+        </a>
+      </div>
+      <div class="price"><i class="fa fa-paw" aria-hidden="true"></i> {{this.name}}</div>
+      <div class="meta">
+        <figure>
+          <i class="fa fa-birthday-cake" aria-hidden="true"></i>{{momentBirthday this.dob}}
+        </figure>
+        <figure>
+          Last interacted with: {{this.lastInteractedWith}}
+        </figure>
+      </div>
+      <div class="description">
+        <p>{{this.details}}</p>
+      </div>
+      <div class="additional-info">
+        <ul>
+          <li>
+            <button class="btn btn-primary small action-button" data-action="lastFed">Feed</button>
+            <figure>Last Fed</figure>
+            <aside>{{momentFromNowTime this.lastFed}}</aside>
+          </li>
+          <li>
+            <button class="btn btn-primary small action-button" data-action="lastTreat">Treat</button>
+            <figure>Last Treat</figure>
+            <aside>{{momentFromNowTime this.lastTreat}}</aside>
+          </li>
+          {{#ifeq type 'dog'}}
+            <li>
+              <button class="btn btn-primary small action-button" data-action="lastWalk">Walk</button>
+              <figure>Last Walk</figure>
+              <aside>{{momentFromNowTime this.lastWalk}}</aside>
+            </li>
+            <li>
+              <button class="btn btn-primary small action-button" data-action="lastOutside">Outside</button>
+              <figure>Last Outside</figure>
+              <aside>{{momentFromNowTime this.lastOutside}}</aside>
+            </li>
+            <li>
+              <button class="btn btn-primary small action-button" data-action="lastBath">Bath</button>
+              <figure>Last Bath</figure>
+              <aside>{{momentFromNowTime this.lastBath}}</aside>
+            </li>
+          {{/ifeq}}
+          {{#ifeq type 'cat'}}
+            <li>
+              <button class="btn btn-primary small action-button" data-action="lastLitterScoop">Scoop</button>
+              <figure>Last Litter Scoop</figure>
+              <aside>{{momentFromNowTime this.lastLitterScoop}}</aside>
+            </li>
+            <li>
+              <button class="btn btn-primary small action-button" data-action="lastBrushing">Brush</button>
+              <figure>Last Brushin'</figure>
+              <aside>{{momentFromNowTime this.lastBrushing}}</aside>
+            </li>
+            <li>
+              <button class="btn btn-primary small action-button" data-action="lastNailClip">Nails</button>
+              <figure>Last Nail Clippin'</figure>
+              <aside>{{momentFromNowTime this.lastNailClip}}</aside>
+            </li>
+          {{/ifeq}}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
