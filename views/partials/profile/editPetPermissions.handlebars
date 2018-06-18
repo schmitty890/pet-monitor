@@ -33,7 +33,7 @@
                         <select name="submit_category" id="petID" data-placeholder="Select" data-enable-search="true">
                           <option value="">Select</option>
                           {{#each hbsObject.thePets}}
-                            <option value={{@index}}>{{this.name}}</option>
+                            <option value={{this.id}}>{{this.name}}</option>
                           {{/each}}
                         </select>
                       </div>
