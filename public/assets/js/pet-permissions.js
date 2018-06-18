@@ -17,7 +17,7 @@ var PetPermissions = function(){
       granteeUserName: $form.find('#username').text().trim(), // the id of the user in the database
       granteeSelectionNumber: Number($form.find('#associate-select').val().trim()) // which column in the database to update
     }
-    console.log(formValues.granteeSelectionNumber);
+    // console.log(formValues.granteeSelectionNumber);
 
     if(formValues.granteeSelectionNumber === 1) {
       formValues.action = 'associateSelectOne';
@@ -27,7 +27,7 @@ var PetPermissions = function(){
       formValues.action = 'associateSelectThree';
     }
 
-    console.log(formValues);
+    // console.log(formValues);
 
     if (formValues.name === '' || formValues.type === '') {
       alert('fill out ALL required forms.');
@@ -41,7 +41,8 @@ var PetPermissions = function(){
       type: 'PUT',
       data: data
     }).then(function() {
-      console.log('update complete');
+      // console.log('update complete');
+      location.reload();
     });
   }
 
