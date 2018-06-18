@@ -83,6 +83,15 @@ module.exports = function(sequelize, Sequelize) {
     },
     associateSelectThree: {
       type: Sequelize.STRING
+    },
+    vetName: {
+      type: Sequelize.STRING
+    },
+    vetPhone: {
+      type: Sequelize.STRING
+    },
+    vetWebsite: {
+      type: Sequelize.STRING
     }
   });
 

@@ -17,6 +17,9 @@ var PostAPet = function(){
       favoriteFood: $form.find('#favFood').val().trim(),
       favoriteTreat: $form.find('#favTreat').val().trim(),
       details: $form.find('#details').val().trim(),
+      vetName: $form.find('#vetName').val().trim(),
+      vetPhone: $form.find('#vetPhone').val().trim(),
+      vetWebsite: $form.find('#vetWebsite').val().trim(),
       signUpDate: moment().format()
     }
 
