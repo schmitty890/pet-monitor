@@ -17,6 +17,7 @@ module.exports = function(app) {
   app.get('/postclassified', isLoggedIn, authController.postclassified);
   app.get('/profile/postapet', isLoggedIn, authController.postapet);
   app.get('/profile/yourpets', isLoggedIn, authController.yourpetslanding);
+  app.get('/profile/pets', isLoggedIn, authController.pets);
 
   app.post('/postclassified', passport.authenticate('local-signin', {
     successRedirect: '/classifieds',
