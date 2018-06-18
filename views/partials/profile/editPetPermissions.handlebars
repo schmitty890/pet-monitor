@@ -22,20 +22,36 @@
             </div>
             <!--end col-md-4-->
             <div class="col-md-8">
-              <h2>Contact Form</h2>
+              <h2>Caregiver form</h2>
               <form class="form email" id="pet-permission-form">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="name" class="col-form-label required">ID of your pet you wish to share permissions with</label>
-                      <input name="petID" type="text" class="form-control" id="petID" placeholder="Your Pet ID" required>
+                      <div class="form-group">
+                        <label for="searchable-select" class="col-form-label">Which slot to associate</label>
+                        <select name="submit_category" id="petID" data-placeholder="Select" data-enable-search="true">
+                          <option value="">Select</option>
+                          {{#each hbsObject.thePets}}
+                            <option value={{@index}}>{{this.name}}</option>
+                          {{/each}}
+                        </select>
+                      </div>
+
+                      {{!-- <input name="petID" type="text" class="form-control" id="petID" placeholder="Your Pet ID" required> --}}
                     </div>
                     <!--end form-group-->
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="email" class="col-form-label required">Username of the person you wish to share with</label>
-                      <input name="username" type="text" class="form-control" id="username" placeholder="Other persons username" required>
+                      {{!-- <input name="username" type="text" class="form-control" id="username" placeholder="Other persons username" required> --}}
+                      <select name="submit_category" id="username" data-placeholder="Select" data-enable-search="true">
+                        <option value="">Select</option>
+                        {{#each hbsObject.theUsers}}
+                          <option value={{@index}}>{{this}}</option>
+                        {{/each}}
+                      </select>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -50,7 +66,7 @@
                     </div>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary float-right" id="pet-permission-btn" data-id={{hbsObject.userId}} data-userName={{hbsObject.userName}}>Send Message</button>
+                <button type="submit" class="btn btn-primary float-right" id="pet-permission-btn" data-id={{hbsObject.userId}} data-userName={{hbsObject.userName}}>Assign this person to your pet!</button>
               </form>
             </div>
           </div>

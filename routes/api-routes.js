@@ -56,6 +56,11 @@ module.exports = function(app) {
           lastNailClip: req.body.time
         }
         break;
+      case 'lastMedicine':
+        update = {
+          lastMedicine: req.body.time
+        }
+        break;
       case 'lastBrushing':
         update = {
           lastBrushing: req.body.time

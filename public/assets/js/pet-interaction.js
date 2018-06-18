@@ -11,6 +11,9 @@ var PetInteraction = function(){
       var petID = $(this).parents('.item').data('id'); // gather id of the pet
       var user = $('body').data('user');
       var action = $(this).attr('data-action'); // gather the action that corresponds with the table column
+      console.log(petID);
+      console.log(user);
+      console.log(action);
       //user must be logged in to edit
       if(user === '') {
         alert('you must be logged in');

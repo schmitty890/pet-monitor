@@ -3,33 +3,33 @@ let db = require('../models/');
 function seeds() {
 
 //   // seeds for users
-  db.user.bulkCreate([
-    {
-      username: 'schmitty890',
-      email: 'schmitty890@gmail.com',
-      password: '$2a$08$CpZPiTLfqzf.RdpY/MVHjeJxy2oBIRO.9q6/YN2wIatetFLWvX6TW',
-      // last_login:
-      status: 'active'
-    }
-  ]);
+  // db.user.bulkCreate([
+  //   {
+  //     username: 'schmitty890',
+  //     email: 'schmitty890@gmail.com',
+  //     password: '$2a$08$CpZPiTLfqzf.RdpY/MVHjeJxy2oBIRO.9q6/YN2wIatetFLWvX6TW',
+  //     // last_login:
+  //     status: 'active'
+  //   }
+  // ]);
 
   // seeds for events
-  db.pet.bulkCreate([
-    {
-      author_id: 1,
-      username: "schmitty890",
-      name: "Harley",
-      image: "http://i12.photobucket.com/albums/a237/jlskate/DSC_0077-1.jpg",
-      type: "cat",
-      dob: "2009-05-01 12:00:00",
-      favoriteFood: "fancy feast",
-      favoriteTreat: "cat nip",
-      details: "a sweet fun lovin' tabby.",
-      signUpDate: "2018-06-15 14:32:21",
-      createdAt: "2018-06-15 14:32:21",
-      updatedAt: "2018-06-15 14:32:21"
-    }
-  ]);
+  // db.pet.bulkCreate([
+  //   {
+  //     author_id: 1,
+  //     username: "schmitty890",
+  //     name: "Harley",
+  //     image: "http://i12.photobucket.com/albums/a237/jlskate/DSC_0077-1.jpg",
+  //     type: "cat",
+  //     dob: "2009-05-01 12:00:00",
+  //     favoriteFood: "fancy feast",
+  //     favoriteTreat: "cat nip",
+  //     details: "a sweet fun lovin' tabby.",
+  //     signUpDate: "2018-06-15 14:32:21",
+  //     createdAt: "2018-06-15 14:32:21",
+  //     updatedAt: "2018-06-15 14:32:21"
+  //   }
+  // ]);
 
 // //   // seeds for resources
 //   db.resource.bulkCreate([

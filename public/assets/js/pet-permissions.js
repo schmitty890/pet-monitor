@@ -8,15 +8,16 @@ var PetPermissions = function(){
     var userName = $("#pet-permission-btn").data("username");
     var action = $(this).attr('data-action');
 
-    // console.log(userId);
-    // console.log(userName);
+    console.log(userId);
+    console.log(userName);
     formValues = {
       userId: userId, // the posters user id (the one granting permission)
       userName: userName, // the posters username (the one granting permission to another user)
-      petID: Number($form.find('#petID').val().trim()),
-      granteeUserName: $form.find('#username').val().trim(),
-      granteeSelectionNumber: Number($form.find('#associate-select').val().trim())
+      petID: Number($form.find('#petID').val().trim()) + 1, // the id of the pet in the database. increment by 1 is hacky. we need to because of the handlebar indexing
+      granteeUserName: $form.find('#username').text().trim(), // the id of the user in the database
+      granteeSelectionNumber: Number($form.find('#associate-select').val().trim()) // which column in the database to update
     }
+    console.log(formValues.granteeSelectionNumber);
 
     if(formValues.granteeSelectionNumber === 1) {
       formValues.action = 'associateSelectOne';
@@ -28,11 +29,11 @@ var PetPermissions = function(){
 
     console.log(formValues);
 
-    // if (formValues.name === '' || formValues.type === '') {
-    //   alert('fill out ALL required forms.');
-    // } else {
+    if (formValues.name === '' || formValues.type === '') {
+      alert('fill out ALL required forms.');
+    } else {
       updatePet(formValues);
-    // }
+    }
   }
 
   function updatePet(data) {
