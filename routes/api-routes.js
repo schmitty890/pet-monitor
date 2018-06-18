@@ -61,6 +61,11 @@ module.exports = function(app) {
           lastMedicine: req.body.time
         }
         break;
+      case 'lastWalk':
+        update = {
+          lastWalk: req.body.time
+        }
+        break;
       case 'lastBrushing':
         update = {
           lastBrushing: req.body.time
