@@ -35,7 +35,8 @@ var PetInteraction = function(){
       type: 'PUT',
       data: data
     }).then(function() {
-      console.log('update complete');
+      // console.log('update complete');
+      location.reload();
     });
   }
 
