@@ -67,6 +67,32 @@ exports.yourpetslanding = function(req, res) {
   });
 }
 
+exports.pets = function(req, res) {
+  let hbsObject = {
+    user: req.user,
+    userId: req.user.id,
+    userName: req.user.username
+  };
+  db.pet.findAll({
+    where: {
+        $or: [{
+            username: hbsObject.user.username
+        }, {
+            associateSelectOne: hbsObject.user.username
+        }, {
+            associateSelectTwo: hbsObject.user.username
+        }, {
+            associateSelectThree: hbsObject.user.username
+        }]
+    }
+  }).then(function(thePets) {
+    // console.log(thePets);
+    hbsObject.thePets = thePets;
+    // console.log(hbsObject)
+    res.render('profilepets', { hbsObject: hbsObject });
+  });
+}
+
 exports.postclassified = function(req, res) {
   let hbsObject = {
     user: req.user
