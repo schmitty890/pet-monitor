@@ -51,6 +51,11 @@
               <figure>Last Bath</figure>
               <aside>{{momentFromNowTime this.lastBath}}</aside>
             </li>
+            <li>
+              <button class="btn btn-primary small action-button" data-action="lastGrooming">Groom</button>
+              <figure>Last Grooming</figure>
+              <aside>{{momentFromNowTime this.lastGrooming}}</aside>
+            </li>
           {{/ifeq}}
           {{#ifeq type 'cat'}}
             <li>
