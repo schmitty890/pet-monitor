@@ -46,10 +46,24 @@ exports.yourpetslanding = function(req, res) {
       username: hbsObject.user.username
     }
   }).then(function(thePets) {
-    // console.log(thePets);
     hbsObject.thePets = thePets;
+
+    db.user.findAll({
+    }).then(function(theUsers) {
+      // console.log(theUsers);
+      var thePetUsernames = [];
+      theUsers.forEach(function(user) {
+        console.log(user.username);
+        thePetUsernames.push(user.username);
+      });
+      hbsObject.theUsers = thePetUsernames;
+      console.log(hbsObject);
+      res.render('yourpetslanding', { hbsObject: hbsObject });
+    });
+    // console.log(thePets);
+    // hbsObject.thePets = thePets;
     // console.log(hbsObject)
-    res.render('yourpetslanding', { hbsObject: hbsObject });
+    // res.render('yourpetslanding', { hbsObject: hbsObject });
   });
 }
 

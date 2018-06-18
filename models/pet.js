@@ -72,6 +72,9 @@ module.exports = function(sequelize, Sequelize) {
     lastWalk: {
       type: Sequelize.DATE
     },
+    lastMedicine: {
+      type: Sequelize.DATE
+    },
     associateSelectOne: {
       type: Sequelize.STRING
     },
