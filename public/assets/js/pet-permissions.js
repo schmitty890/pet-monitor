@@ -13,7 +13,7 @@ var PetPermissions = function(){
     formValues = {
       userId: userId, // the posters user id (the one granting permission)
       userName: userName, // the posters username (the one granting permission to another user)
-      petID: Number($form.find('#petID').val().trim(), // the id of the pet in the database. increment by 1 is hacky. we need to because of the handlebar indexing
+      petID: Number($form.find('#petID').val().trim()), // the id of the pet in the database. increment by 1 is hacky. we need to because of the handlebar indexing
       granteeUserName: $form.find('#username').text().trim(), // the id of the user in the database
       granteeSelectionNumber: Number($form.find('#associate-select').val().trim()) // which column in the database to update
     }
